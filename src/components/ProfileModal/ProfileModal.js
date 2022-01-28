@@ -34,7 +34,7 @@ const ProfileModal = ({ show, handleClose, logout }) => {
                                 </div>
                             </div>
                             <div className="text-center">
-                            <Button className="logout_btn" onClick={logout} title="Logout"/>
+                            <Button className="logout_btn  mx-auto" onClick={logout} title="Logout"/>
                                 </div>
                                 
                         </div>

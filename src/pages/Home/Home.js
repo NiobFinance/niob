@@ -596,7 +596,7 @@ const Home = () => {
               />
               <h3>Farm Planets</h3>
               <p>Stake LP tokens in Farms and earn up to:</p>
-              <h3>{topFarmApy !== "" ? topFarmApy : "loading.."} % APY</h3>
+              <h3>{topFarmApy !== "" ? topFarmApy : "loading.."} % APR</h3>
               <Link
                 className="captionFooter d-flex justify-content-between align-items-center"
                 to="farmplanets/active"

@@ -206,7 +206,7 @@ const Sidebar = (props) => {
           <ul className="token-language">
             <li className="token_list">
               <Link>
-                <img src={NIOBtoken} /> <span>${NiobBusdValue ? NiobBusdValue.toFixed(2): "0"}</span>
+                <img src={NIOBtoken} /> <span>${NiobBusdValue ? NiobBusdValue.toFixed(4): "0"}</span>
               </Link>
             </li>
             <li className="lang_list">

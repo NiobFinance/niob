@@ -62,7 +62,7 @@ const Referral = () => {
                                     <div className="referalcodeDiv d-block">
                                         <Form.Group>
                                             <div className="referalCopyBox">
-                                                <input class="form-control" value={`https://niobswap.app/${isUserConnected}`} readOnly />
+                                                <input class="form-control" value={`https://niob.app/r/${isUserConnected}`} readOnly />
                                                 <CopyToClipboard text={`${window.location.origin}/r/${isUserConnected}`} onCopy={() => toast.success('Copied!')}>
                                                     <button></button>
                                                 </CopyToClipboard>

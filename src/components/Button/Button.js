@@ -8,7 +8,7 @@ const Button = (props) => {
       className={`btn buttonStyle ${props.className}`}
       disabled={props.disabled}
     >
-      {props.title} <img src={props.icon} />
+      {props.title} {props.icon ? <img src={props.icon} /> : "" }
     </button>
   );
 };

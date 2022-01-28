@@ -65,7 +65,7 @@ const ReturnInvest = ({ roiModalData, handleClose, lpDetails, show, niobId }) =>
                                     </tr>
                                 </tbody>
                             </Table>
-                            <p>Calculated based on current rates. Compounding once daily. Rates are estimates provided for your convenience only, and by no means represent guaranteed returns.</p>
+                            <p>Rates are estimates provided for your convenience only, and by no means represent guaranteed returns.</p>
                             <div className="confirmation">
                                 <Link to="trade/liquidity/addLiquidity" className="btn buttonStyle" onClick={handleClose}>Get {lpDetails?.lpTokenName} </Link>
                             </div>

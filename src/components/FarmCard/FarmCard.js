@@ -22,7 +22,7 @@ const FarmCard = props => {
                 </div>
             </div> 
             <div className="direction">
-                <h3>APY {props.apy}</h3>
+                <h3>APR {props.apy}</h3>
                 <ButtonLink title="Farm" icon={farmicon} link="/farmplanets/active" />
             </div>
        </Card>

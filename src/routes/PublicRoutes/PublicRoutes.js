@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
-import { withRouter } from "react-router";
+import { useLocation, withRouter } from "react-router";
 import Header from "../../components/Header/Header";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Home from "../../pages/Home/Home";
@@ -11,8 +11,16 @@ import Trade from "../../pages/Trade/Trade";
 import AddLiquidity from "../../pages/Trade/AddLiquidity";
 import { rootName } from "../../constant";
 import PoolGalaxy from "../../pages/PoolGalaxy/PoolGalaxy";
+import ReactGA from 'react-ga';
 
 const PublicRoutes = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    ReactGA.initialize("");
+    ReactGA.pageview(location.pathname + location.search);
+  }, [location])
+
   const [small, setSmall] = useState(false);
   const [navCollapse, setNavCollapse] = useState(false);
   const [tradeDropdown, openCloseTradeDropdown] = useState(false);

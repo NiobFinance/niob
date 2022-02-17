@@ -15,6 +15,7 @@ import { ExchangeService } from "../../services/ExchangeService";
 import { FarmService } from "../../services/FarmService";
 import { ReferralsServices } from "../../services/ReferralsServices";
 import Statement from "../../assets/Pdfs/Statement.pdf";
+import Web3 from "web3";
 import {
   MAIN_CONTRACT_LIST,
   BURN_ADDRESS,
@@ -100,8 +101,20 @@ const Home = () => {
   useEffect(() => {
     init();
     if (ref) {
-      dispatch(savereffralAddress(ref));
-      toast.success(`Referral Applied, try staking now !`);
+      const checkAddress = await Web3.utils.isAddress(ref.toLowerCase());
+      if (!checkAddress) {
+        toast.error("Address does not exist!");
+        return;
+      }
+      if (isUserConnected) {
+        let ref = await ReferralsServices.getReferrer(isUserConnected);
+        if (referralAddress !== "0x0000000000000000000000000000000000000000") {
+          toast.error(`This user has already referral`);
+          return;
+        }
+        dispatch(savereffralAddress(ref.toLowerCase()));
+      }
+      toast.success(`Please connect with wallet!`);
     }
   }, [isUserConnected]);
 
